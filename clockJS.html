@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-body {background-color: black;}
-p {
-  color: red; 
-  font-size: 60px;
-  border: 2px solid grey;
-border-radius: 8px;
-  padding: 30px;
-  position: relative;
-  top: 280px;
-  width: 20%; 
-}
-</style>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    p {
+      color: red;
+      font-size: 60px;
+      border: 2px solid grey;
+      border-radius: 8px;
+      padding: 30px;
+      position: relative;
+      top: 280px;
+      width: 20%;
+    }
+  </style>
 </head>
 
 <body>
-<center><p id="demo">Welcome!</p></center>
+  <center>
+    <p id="demo">Welcome!</p>
+  </center>
 
-<script>
-function gettime() {
-    var d = new Date();
-    var h = d.getHours();
-    var m = d.getMinutes();
-    var s = d.getSeconds();
-    document.getElementById("demo").innerHTML = h + " : " + m + " : " + s;
-}
-setInterval(gettime, 1000);
-</script>
+  <script>
+    function gettime() {
+      var d = new Date();
+      var h = d.getHours();
+      var m = d.getMinutes();
+      var s = d.getSeconds();
+      document.getElementById("demo").innerHTML = h + " : " + m + " : " + s;
+    }
+    setInterval(gettime, 1000);
+  </script>
 
 </body>
+
 </html>

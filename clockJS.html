@@ -24,20 +24,62 @@
 <body>
   <center>
     <p id="demo">Welcome!</p>
+    <!-- <input type="text" id="tt" onchange="change()">
+    <button onclick="disp()">Click here</button> -->
   </center>
 
   <script>
+    // function change(){
+    //   var x = document.getElementById("tt");
+    //   x.value = x.value.toUpperCase();
+    // }
+
+    // function disp(){
+    //   alert("Hey dude!!");
+    // }
+
+    
+
+    var z = document.getElementById("demo");
+    z.addEventListener("mousein", overel);
+    z.addEventListener("mouseout", gettime);
+    function overel() {
+      z.innerHTML = "MyClock";
+    }
+
     function gettime() {
       var d = new Date();
       var h = d.getHours();
       var m = d.getMinutes();
       var s = d.getSeconds();
-      if(s<10)
+
+      if(s<10 && m>=10 && h>=10){
         document.getElementById("demo").innerHTML = h + " : " + m + " : " + "0" + s;
+      }
+      else if(m<10 && s>=10 && h>=10){
+        document.getElementById("demo").innerHTML = h + " : " + "0" + m + " : " + s;
+      }
+      else if(h<10 && m>=10 && s>=10){
+        document.getElementById("demo").innerHTML = "0" + h + " : " + m + " : " + s;
+      }
+      else if(s<10 && m<10 && h>=10){
+        document.getElementById("demo").innerHTML = h + " : " + "0" + m + " : " + "0" + s;
+      }
+      else if(s<10 && h<10 && m>=10){
+        document.getElementById("demo").innerHTML = "0" +h + " : " + m + " : " + "0" + s;
+      }
+      else if(m<10 && h<10 && s>=10){
+        document.getElementById("demo").innerHTML = h + " : " + "0" + m + " : " + "0" + s;
+      }
+      else if(s<10 && m<10 && h<10){
+        document.getElementById("demo").innerHTML = "0" + h + " : " + "0" + m + " : " + "0" + s;
+      }
       else  
         document.getElementById("demo").innerHTML = h + " : " + m + " : " + s;
     }
     setInterval(gettime, 1000);
+    
+    
   </script>
 
 </body>
